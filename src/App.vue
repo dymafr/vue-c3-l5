@@ -1,16 +1,21 @@
-<template>
-  <h1>{{ getTitle() }}</h1>
-  <input :type="getType()" />
-</template>
+<template></template>
 
 <script setup lang="ts">
-function getTitle() {
-  return 'Je suis un titre';
+interface User {
+  name: string;
+  age: number | string;
 }
 
-function getType() {
-  return 'number';
+let user: User | null;
+
+function createUser(name: string): User | null {
+  return {
+    name,
+    age: 18,
+  };
 }
+
+user = createUser('Paul');
 </script>
 
 <style></style>
